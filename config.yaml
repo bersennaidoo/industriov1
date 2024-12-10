@@ -1,0 +1,53 @@
+baseURL: "https://example.org/"
+languageCode: "en-us"
+title: "Industrio Company Site"
+enableEmoji: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  highlight:
+    lineNos: true
+
+module:
+  mounts:
+    - source: "assets"
+      target: "assets"
+    - source: "static"
+      target: "static"
+    - source: "node_modules/bootstrap"
+      target: "assets/scss/bootstrap"
+    - source: "node_modules"
+      target: "static/js"
+    - source: "node_modules/@fortawesome/fontawesome-free"
+      target: "static"
+    - source: "node_modules"
+      target: "assets/css"
+    - source: "node_modules/@fortawesome/fontawesome-free/scss"
+      target: "assets/css"
+
+menus:
+  main:
+    - identifier: "Home"
+      name: "Home"
+      url: "/"
+      weight: 100
+    - identifier: "About"
+      name: "About"
+      url: "/about"
+      weight: 200
+    - identifier: "Contact"
+      name: "Contact"
+      url: "/contact"
+      weight: 300
+
+  footer:
+    - identifier: "About"
+      name: "About"
+      url: "/about"
+      weight: 500

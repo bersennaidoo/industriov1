@@ -1,0 +1,35 @@
+import { test, expect, type Page } from "@playwright/test";
+
+test.describe("Valet Parking feature", () => {
+
+  /*test.beforeEach(async ({ page }) => {
+    await page.goto("http://localhost:1313/parkcalc");
+  });*/
+
+  test("it should calculates valet parking cost for half an hour", async ({ page }) => {
+
+    // Arrange/Given
+    // customer visits home page and theres a link to the parkcalc page
+    await page.goto("http://localhost:1313")
+    await expect(page.getByRole("link", { name: "Shop" })).toBeVisible()
+
+    // Act
+    // customer clicks on link and is taken to parkcalc page which displays a form
+    // customer checks valet parking and fills duration and submits form
+    await page.goto("http://localhost:1313/shop")
+    await expect(page.locator('.form')).toHaveClass("form form--calc")
+    const toggleRadioValet =  page.getByRole("radio", { name: "Valet Parking" }) 
+    toggleRadioValet.check()
+    await expect(toggleRadioValet).toBeChecked()
+
+    await page.getByLabel("Parking Duration").fill("30")
+
+    const buttonSubmit = page.getByRole("button", { name: "Submit" })
+    await buttonSubmit.click()
+
+    // Assert
+    // test asserts that value return from software is equal to value expected
+    await expect(page.getByText("R12")).toBeVisible()
+
+  });
+});

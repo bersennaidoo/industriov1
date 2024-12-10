@@ -1,0 +1,3 @@
+// put e2e only commands and plugins here
+
+import './commands'

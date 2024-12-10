@@ -1,0 +1,21 @@
+public
+.hugo_build.lock
+package-lock.json
+node_modules
+
+# Local Netlify folder
+.netlify
+
+# cucumber cypress
+tmp/unit/
+cypress/videos/
+.idea/
+cypress/screenshots/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

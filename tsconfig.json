@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      "target": "ES2017",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "baseUrl": "http://localhost:1313",
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "types": ["node", "jest", "cypress", "@testing-library/cypress"],
+      "module": "node16",
+      "moduleResolution": "node16",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx",
+    },
+    "include": ["./cypress/**/*.spec.cy.ts", "./cypress/**/*.spec.cy.tsx", "./static/react/**/*.test.ts", "./static/react/**/*.test.tsx", "./static/react/data/interfaces.d.ts", "./node_modules/@testing-library/cypress/types/*.d.ts", "cypress", "cypress.config.ts", "static/react"],
+    "exclude": ["node_modules/**/*.ts", "./public/js/**/*.ts"]
+
+  }
